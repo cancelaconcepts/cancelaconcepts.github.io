@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html style="background-color:#000;">
+<head>
+<meta charset="utf-8"/>
+<title>Floatbox Video Player</title>
+<script src="floatbox.js"></script>
+
+<style>
+html, body, #container {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	border-width: 0;
+	background-color: #000;
+}
+p {
+	background-color: #fffacd;
+	width: 60%;
+	text-align: center;
+	margin: 24px auto;
+	padding: 16px;
+}
+</style>
+
+</head>
+<body>
+<div id="container"></div>
+
+<script>
+fb.DOMReady( function () {
+
+	var $player,
+		mp4Test = 'data:video/mp4;base64,' +
+			'AAAAFGZ0eXBNU05WAAACAE1TTlYAAAOUbW9vdgAAAGxtdmhkAAAAAM9ghv7PYIb+AAACWAAACu8AAQAAAQAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAA' +
+			'AAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAnh0cmFrAAAAXHRraGQAAAAHz2CG/s9ghv4AAAABAAAAAAAACu8AAAAAAAAAAAAAAAAAAAAA' +
+			'AAEAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAABAAAAAAFAAAAA4AAAAAAHgbWRpYQAAACBtZGhkAAAAAM9ghv7PYIb+AAALuAAANq8AAAAAAAAAIWhkbHIAAAAA' +
+			'bWhscnZpZGVBVlMgAAAAAAABAB4AAAABl21pbmYAAAAUdm1oZAAAAAAAAAAAAAAAAAAAACRkaW5mAAAAHGRyZWYAAAAAAAAAAQAAAAx1cmwgAAAAAQAAAVdzdGJsAAAA' +
+			'p3N0c2QAAAAAAAAAAQAAAJdhdmMxAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAFAAOABIAAAASAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' +
+			'GP//AAAAEmNvbHJuY2xjAAEAAQABAAAAL2F2Y0MBTUAz/+EAGGdNQDOadCk/LgIgAAADACAAAAMA0eMGVAEABGjuPIAAAAAYc3R0cwAAAAAAAAABAAAADgAAA+gAAAAU' +
+			'c3RzcwAAAAAAAAABAAAAAQAAABxzdHNjAAAAAAAAAAEAAAABAAAADgAAAAEAAABMc3RzegAAAAAAAAAAAAAADgAAAE8AAAAOAAAADQAAAA0AAAANAAAADQAAAA0AAAAN' +
+			'AAAADQAAAA0AAAANAAAADQAAAA4AAAAOAAAAFHN0Y28AAAAAAAAAAQAAA7AAAAA0dXVpZFVTTVQh0k/Ou4hpXPrJx0AAAAAcTVREVAABABIAAAAKVcQAAAAAAAEAAAAA' +
+			'AAAAqHV1aWRVU01UIdJPzruIaVz6ycdAAAAAkE1URFQABAAMAAAAC1XEAAACHAAeAAAABBXHAAEAQQBWAFMAIABNAGUAZABpAGEAAAAqAAAAASoOAAEAZABlAHQAZQBj' +
+			'AHQAXwBhAHUAdABvAHAAbABhAHkAAAAyAAAAA1XEAAEAMgAwADAANQBtAGUALwAwADcALwAwADYAMAA2ACAAMwA6ADUAOgAwAAABA21kYXQAAAAYZ01AM5p0KT8uAiAA' +
+			'AAMAIAAAAwDR4wZUAAAABGjuPIAAAAAnZYiAIAAR//eBLT+oL1eA2Nlb/edvwWZflzEVLlhlXtJvSAEGRA3ZAAAACkGaAQCyJ/8AFBAAAAAJQZoCATP/AOmBAAAACUGa' +
+			'AwGz/wDpgAAAAAlBmgQCM/8A6YEAAAAJQZoFArP/AOmBAAAACUGaBgMz/wDpgQAAAAlBmgcDs/8A6YEAAAAJQZoIBDP/AOmAAAAACUGaCQSz/wDpgAAAAAlBmgoFM/8A' +
+			'6YEAAAAJQZoLBbP/AOmAAAAACkGaDAYyJ/8AFBAAAAAKQZoNBrIv/4cMeQ==',
+		Ax128 = 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
+		webmTest = 'data:video/webm;base64,' +
+			'GkXfo49CgoR3ZWJtQoeBAUKFgQEYU4BnAQAAAAAAF60RTZt0vE27jFOrhBVJqWZTrIIQA027jFOrhBZUrmtTrIIQbE27jFOrhBFNm3RTrIIXmU27jFOrhBxTu2tTrIIW' +
+			's+xPvwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' +
+			Ax128 + Ax128 + Ax128 + Ax128 + Ax128 + Ax128 + Ax128 + Ax128 + Ax128 + Ax128 + Ax128 + Ax128 + Ax128 + Ax128 + Ax128 + Ax128 +
+			Ax128 + Ax128 + Ax128 + Ax128 + Ax128 + Ax128 + Ax128 + Ax128 + Ax128 + Ax128 + Ax128 + Ax128 + Ax128 + Ax128 + Ax128 + Ax128 +
+			Ax128 + Ax128 + Ax128 + Ax128 + Ax128 + Ax128 + Ax128 + Ax128 + Ax128 +
+			'AAAAFUmpZuQq17GDD0JATYCjbGliZWJtbCB2MC43LjcgKyBsaWJtYXRyb3NrYSB2MC44LjFXQY9BVlNNYXRyb3NrYUZpbGVEiYRFnEAARGGIBc2Lz1QNtgBzpJCy3XZ0' +
+			'KNuKNZS4+fDpFxzUFlSua9iu1teBAXPFhL4G+bmDgQG5gQGIgQFVqoEAnIEAbeeBASMxT4Q/gAAAVe6BAIaFVl9WUDiqgQEj44OEE95DVSK1nIN1bmTgkbCBULqBPJqB' +
+			'AFSwgVBUuoE87EQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' +
+			Ax128 + Ax128 + Ax128 + Ax128 + Ax128 + Ax128 + Ax128 + Ax128 + Ax128 +
+			'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB9DtnVB4eeBAKC4obaBAAAAkAMA' +
+			'nQEqUAA8AABHCIWFiIWEiAICAAamYnoOC6cfJa8f5Zvda4D+/7YOf//nNefQYACgnKGWgQFNANEBAAEQEAAYABhYL/QACIhgAPuC/rOgnKGWgQKbANEBAAEQEAAYABhY' +
+			'L/QACIhgAPuC/rKgnKGWgQPoANEBAAEQEAAYABhYL/QACIhgAPuC/rOgnKGWgQU1ANEBAAEQEAAYABhYL/QACIhgAPuC/rOgnKGWgQaDANEBAAEQEAAYABhYL/QACIhg' +
+			'APuC/rKgnKGWgQfQANEBAAEQEAAYABhYL/QACIhgAPuC/rOgnKGWgQkdANEBAAEQEBRgAGFgv9AAIiGAAPuC/rOgnKGWgQprANEBAAEQEAAYABhYL/QACIhgAPuC/rKg' +
+			'nKGWgQu4ANEBAAEQEAAYABhYL/QACIhgAPuC/rOgnKGWgQ0FANEBAAEQEAAYABhYL/QACIhgAPuC/rOgnKGWgQ5TANEBAAEQEAAYABhYL/QACIhgAPuC/rKgnKGWgQ+g' +
+			'ANEBAAEQEAAYABhYL/QACIhgAPuC/rOgnKGWgRDtANEBAAEQEAAYABhYL/QACIhgAPuC/rOgnKGWgRI7ANEBAAEQEAAYABhYL/QACIhgAPuC/rIcU7trQOC7jLOBALeH' +
+			'94EB8YIUzLuNs4IBTbeH94EB8YIUzLuNs4ICm7eH94EB8YIUzLuNs4ID6LeH94EB8YIUzLuNs4IFNbeH94EB8YIUzLuNs4IGg7eH94EB8YIUzLuNs4IH0LeH94EB8YIU' +
+			'zLuNs4IJHbeH94EB8YIUzLuNs4IKa7eH94EB8YIUzLuNs4ILuLeH94EB8YIUzLuNs4INBbeH94EB8YIUzLuNs4IOU7eH94EB8YIUzLuNs4IPoLeH94EB8YIUzLuNs4IQ' +
+			'7beH94EB8YIUzLuNs4ISO7eH94EB8YIUzBFNm3SPTbuMU6uEH0O2dVOsghTM',
+		params = fb.deserialize( location.search.substring( 1 ) ),
+		autoEnd = params.autoend != '0',
+		mp4Source = params.source,
+		webmSource = mp4Source.replace( /\.mp4\b/i, '.webm' ),
+		posterSource = params.poster || mp4Source.replace( /\.mp4\b/i, '.jpg' ),
+		canPlayWebm = canPlay( 'webm' ),  // Chrome, Firefox 4.0+, Opera 10.6+, IE 9+ with webmmf installed
+		canPlayMp4 = canPlay( 'mp4' ),  // IE 9+, Safari 3.1+, Firefox 4.0+, Chrome but problematic on some hardware
+// 		canPlayOgg = canPlay( 'ogg' ),  // Chrome, Firefox 3.5+, Opera 10.5+
+		$container = fb.$( 'container' ),
+		$style = $container.style,
+		handlers = [],
+		canAutoPlay = 'test';
+
+	delete params.autoend;
+	delete params.source;
+	delete params.poster;
+	params.bgcolor = params.bgcolor || 'transparent';
+	$style.backgroundColor = params.bgcolor;
+
+// test if player will auto-start (most mobiles will not)
+	if ( !canPlayWebm && !canPlayMp4 ) {
+		canAutoPlay = 'yes';  // flash and alt content
+	}
+	else {
+
+		setTimeout( function () {
+
+			if ( $player.currentTime ) {
+				canAutoPlay = 'yes';
+				$player.pause();
+				buildPlayer();
+			}
+
+			else {
+				canAutoPlay = 'no';
+				fb.preload( posterSource, function ( img ) {
+					if ( !img.ok ) {
+						posterSource = null;
+					}
+					buildPlayer();
+				} );
+			}
+
+		}, 177 );
+	}
+
+// go
+	buildPlayer();
+
+	function buildPlayer () {
+		var source = canAutoPlay == 'test' ? ( canPlayWebm ? webmTest : mp4Test ) : ( canPlayWebm ? webmSource : mp4Source );
+
+	// HTML5 video
+		if ( canPlayWebm || canPlayMp4 ) {
+
+			fb.removeEvent( handlers );
+			handlers.length = 0;
+
+			$container.innerHTML = '<video id="fbPlayer" width="100%" height="100%"' +
+				( canAutoPlay != 'test' ? ' controls' : '' ) +
+				' preload=' + ( canAutoPlay != 'no' ? '"metadata"' : '"none"' ) +
+				( canAutoPlay == 'no' && posterSource ? ' poster="' + posterSource + '"' : '' ) +
+				' src="' + source + '"></video>';
+			$player = fb.$( 'fbPlayer' );
+
+			if ( canAutoPlay != 'no' ) {
+				handlers.push(
+					fb.addEvent( $player, 'loadedmetadata', $player.play )
+				);
+			}
+
+			if ( canAutoPlay != 'test' ) {
+				handlers.push(
+					fb.addEvent( $player, 'error', function () {
+						if ( canPlayWebm ) {
+							canPlayWebm = false;
+						}
+						else {
+							canPlayMp4 = false;
+						}
+						buildPlayer();
+					} ),
+					autoEnd && fb.addEvent( $player, 'ended', function () {
+						fb.removeEvent( handlers );
+						fb.end();
+					} )
+				);
+			}
+		}
+
+	// Flash fallback
+		else if ( canAutoPlay != 'test' ) {
+
+// 			document.body.style.background = 'url(graphics/black/loader.gif) no-repeat center';
+			$style.width = $style.height = '0';  // hide white/green screen at startup
+			$container.innerHTML =  // alt content if flash doesn't work
+				'<p>Uh-oh. Your browser is unable to play this video.<br />' +
+				'Please right-click <a href="' + mp4Source + '">this link</a> ' +
+				'to download the video for offline viewing with a standalone player.</p>';
+			params.config = '{"playerId":"fbPlayer","clip":{"url":"' + mp4Source + '"}}';
+
+			fb.flashObject( {
+//				source: '//releases.flowplayer.org/swf/flowplayer-3.2.18.swf',
+				source: '//cdn.jsdelivr.net/flowplayer/3.2.15/flowplayer-3.2.15.swf',
+				width: '100%',
+				height: '100%',
+				$: 'container',
+				id: 'fbPlayer',
+				params: params,
+				failure: showContainer
+			} );
+
+			window.flowplayer = {  // minimal flowplayer object for receiving events
+				fireEvent: function ( id, type ) {
+					if ( type == 'onBegin' ) {
+						setTimeout( showContainer, 177 );
+					}
+					if ( autoEnd && type == 'onFinish' ) {
+						$style.width = $style.height = '0';
+						fb.end();
+					}
+				}
+			};
+		}
+	}
+// end buildPlayer
+
+	function canPlay ( type ) {
+		var $checker = document.createElement( 'video' );
+		return !!( $checker && $checker.canPlayType && $checker.canPlayType( 'video/' + type ) );
+	}
+
+	function showContainer () {
+		$style.width = $style.height = '100%';
+	}
+
+} );
+</script>
+
+</body>
+</html>

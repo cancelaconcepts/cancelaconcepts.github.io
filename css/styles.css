@@ -1,0 +1,1012 @@
+/*ELEMENTOS COMUNS DAS PÁGINAS*/
+
+@font-face {
+    font-family: 'Letter Gothic Std';
+    font-style: normal;
+    font-weight: normal;
+    src: url('LetterGothicStd.woff') format('woff');
+}
+
+body {
+    /*Manter o tamanho minímo com os pixeis indicados*/
+    /*min-width: 900px;*/
+    width: auto !important;
+    background-color: rgb(214, 214, 213);
+    padding: 0px;
+    margin: 0px;
+    outline: none;
+}
+
+a {
+    outline: none!important;
+}
+
+
+/*--------- medidas de ecrãs - responsividade ----*/
+
+@media (min-width: 297px) and (max-width: 480px) {
+    body {
+        font-size: 100%;
+    }
+    .footer_homepage #icones_links a img {
+        display: inline-flex;
+        float: right;
+        padding-top: 2%;
+        width: 10%;
+    }
+    .footer_homepage p {
+        color: #1C7F89;
+        width: 100%;
+        font-family: "Letter Gothic STD", sans-serif;
+        font-weight: bold;
+        font-size: 0.7em;
+    }
+    .footer_restantes #icones_links a img {
+        display: inline-flex;
+        float: right;
+        padding-top: 2%;
+        width: 10%;
+    }
+    .footer_restantes p {
+        color: #1C7F89;
+        width: 100%;
+        font-family: "Letter Gothic STD", sans-serif;
+        font-weight: bold;
+        font-size: 0.7em;
+    }
+    .mainmenu_index_nav a {
+        font-size: 0.5em;
+    }
+}
+
+
+/* Extra small devices (phones, up to 480px) */
+
+@media (min-width: 480px) and (max-width: 767px) {
+    body {
+        font-size: 105%;
+    }
+    .container-fluid {
+        text-align: left;
+    }
+    .footer_restantes {
+        margin-top: 30%;
+        color: #989898;
+        text-align: center;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    .footer_restantes p {
+        color: #fff;
+        font-family: "Letter Gothic STD", sans-serif;
+        font-weight: 100;
+    }
+    .footer_restantes #icones_links a img {
+        display: inline;
+        float: none;
+        padding-top: 2%;
+    }
+    .footer_homepage {
+        text-align: center;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    .footer_homepage p {
+        color: #1C7F89;
+        font-family: "Letter Gothic STD", sans-serif;
+        font-weight: 100;
+    }
+    .footer_homepage #icones_links a img {
+        display: inline;
+        float: none;
+        padding-top: 2%;
+    }
+}
+
+
+/* Small devices (tablets, 768px and up) */
+
+@media (min-width: 768px) and (max-width: 991px) {
+    body {
+        font-size: 120%;
+    }
+    .footer_restantes {
+        margin-top: 20%;
+        text-align: center;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    .footer_restantes p {
+        color: #1C7F89;
+        font-family: "Letter Gothic STD", sans-serif;
+        font-weight: 100;
+    }
+    .footer_restantes #icones_links a img {
+        display: inline;
+        float: none;
+        padding-top: 2%;
+    }
+    .footer_homepage {
+        margin-top: 20%;
+        color: #989898;
+        text-align: center;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .footer_homepage p {
+        color: #fff;
+        font-family: "Letter Gothic STD", sans-serif;
+        font-weight: 100;
+    }
+    .footer_homepage #icones_links a img {
+        display: inline;
+        float: none;
+        padding-top: 2%;
+    }
+    .container-fluid {
+        text-align: center;
+    }
+    .mainmenu_design nav a {
+        padding-right: 2%;
+        padding-left: 2%;
+    }
+}
+
+
+/* tablets/desktops and up ----------- */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    body {
+        font-size: 100%;
+    }
+    .container-fluid {
+        text-align: center;
+    }
+}
+
+
+/* large desktops and up ----------- */
+
+@media screen and (min-width: 1200px) {
+    body {
+        font-size: 160%;
+    }
+    .container-fluid {
+        text-align: center;
+    }
+    .mainmenu_index {
+        text-align: center;
+        width: 100%;
+        position: inherit;
+        top: 20px;
+    }
+    .mainmenu_index about {
+        text-decoration: none;
+        color: dimgray;
+        font-size: 150%;
+    }
+    .mainmenu_index design {
+        text-decoration: none;
+        color: dimgray;
+        font-size: 150%;
+    }
+}
+
+
+/*Utilizado no Menu com as categorias*/
+
+.container-fluid {
+    float: left;
+    text-align: left;
+    margin: auto;
+    width: 100%;
+}
+
+
+/* --------------------- */
+
+
+/* Menu Idiomas - seleçao de idioma*/
+
+.lang a {
+    background-color: transparent;
+    font-family: "Letter Gothic STD", sans-serif;
+    font-weight: 300;
+}
+
+.languages_en {
+    float: right;
+    position: inherit;
+    margin-top: 5%;
+    text-decoration: none;
+    color: dimgray;
+    font-size: 150%;
+    display: inline;
+    font-family: "Letter Gothic STD", sans-serif;
+}
+
+.languages_pt {
+    float: right;
+    margin-top: 5%;
+    text-decoration: none;
+    color: dimgray;
+    font-size: 150%;
+    display: inline;
+    font-family: "Letter Gothic STD", sans-serif;
+}
+
+.languages_en #index_lang {
+    float: right;
+    margin-top: -40%;
+    text-decoration: none;
+    color: #1C7F89;
+    font-size: 150%;
+    display: inline;
+    font-family: "Letter Gothic STD", sans-serif;
+}
+
+.languages_pt #index_lang {
+    float: right;
+    position: relative;
+    margin-top: -40%;
+    text-decoration: none;
+    color: #1C7F89;
+    font-size: 150%;
+    display: inline;
+    font-family: "Letter Gothic STD", sans-serif;
+}
+
+.languages_en a {
+    text-decoration: none;
+    color: dimgray;
+    font-size: 100%;
+}
+
+.languages_pt a {
+    text-decoration: none;
+    color: dimgray;
+    font-size: 100%;
+}
+
+.languages_en a:hover {
+    color: #fff;
+}
+
+.languages_pt a:hover {
+    color: #fff;
+}
+
+.languages_en #en {
+    color: #105F63;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.languages_pt #pt {
+    color: #105F63;
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 100%;
+}
+
+
+/* --------------------- */
+
+
+/* EXCETO INDEX / Homepage */
+
+
+/* menu principal design*/
+
+.mainmenu_design {
+    text-align: center;
+    width: 100%;
+    position: relative;
+}
+
+.mainmenu_design .logo {
+    width: 25%;
+    margin: auto;
+}
+
+.mainmenu_design .design {
+    text-decoration: underline;
+    color: #105F63;
+    font-size: 120%;
+    font-family: "Letter Gothic STD", sans-serif;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.mainmenu_design .about {
+    color: dimgray;
+    font-size: 120%;
+    font-family: "Letter Gothic STD", sans-serif;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.mainmenu_design_nav a {
+    text-decoration: none;
+    color: dimgray;
+    font-size: 100%;
+    display: inline-block;
+    font-family: "Letter Gothic STD", sans-serif;
+    margin-top: 2%;
+    margin-left: 12%;
+    text-align: center;
+    margin-right: 12%;
+    margin-bottom: 2%;
+}
+
+.mainmenu_design_nav .main-title {
+    width: 80%;
+    margin: auto;
+}
+
+.mainmenu_design nav a:hover {
+    color: #fff;
+}
+
+.mainmenu_design nav a.active {
+    color: #fff;
+}
+
+.mainmenu_design_nav {
+    margin: auto;
+    width: 100%;
+    padding-top: 0em;
+    position: inherit;
+    display: inline-block;
+}
+
+.main-title h2 {
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    margin: 0;
+    margin-bottom: 0.5%;
+    padding: 0;
+    font-family: "Letter Gothic STD", sans-serif;
+    font-weight: 700;
+    font-size: 1.5em;
+    color: #fff;
+}
+
+.main-title h4 {
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    margin: 0;
+    margin-bottom: 10%;
+    padding: 0;
+    font-family: "Letter Gothic STD", sans-serif;
+    font-weight: 600;
+    font-size: 0.7em;
+    color: #fff;
+}
+
+
+/* menu principal about*/
+
+.mainmenu_about {
+    text-align: center;
+    width: 100%;
+    position: relative;
+}
+
+.mainmenu_about .logo {
+    width: 25%;
+    margin: auto;
+}
+
+.mainmenu_about .design {
+    color: #696969;
+    font-size: 120%;
+    font-family: "Letter Gothic STD", sans-serif;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.mainmenu_about .about {
+    text-decoration: underline;
+    color: #105F63;
+    font-size: 120%;
+    font-family: "Letter Gothic STD", sans-serif;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.mainmenu_about_nav a {
+    text-decoration: none;
+    color: dimgray;
+    font-size: 100%;
+    display: inline-block;
+    font-family: "Letter Gothic STD", sans-serif;
+    margin-top: 2%;
+    margin-left: 12%;
+    text-align: center;
+    margin-right: 12%;
+    margin-bottom: 2%;
+}
+
+.mainmenu_about_nav .main-title {
+    width: 80%;
+    margin: auto;
+}
+
+.mainmenu_about nav a:hover {
+    color: #fff;
+}
+
+.mainmenu_about nav a.active {
+    color: #fff;
+}
+
+.mainmenu_about_nav {
+    margin: auto;
+    width: 100%;
+    padding-top: 0em;
+    position: inherit;
+    display: inline-block;
+}
+
+.main-title h2 {
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    margin: 0;
+    margin-bottom: 0.5%;
+    padding: 0;
+    font-family: "Letter Gothic STD", sans-serif;
+    font-weight: 700;
+    font-size: 1.5em;
+    color: #fff;
+}
+
+.main-title h4 {
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    margin: 0;
+    margin-bottom: 10%;
+    padding: 0;
+    font-family: "Letter Gothic STD", sans-serif;
+    font-weight: 600;
+    font-size: 0.7em;
+    color: #fff;
+}
+
+
+/* --------------------- */
+
+
+/* footer */
+
+.footer_restantes {
+    margin-top: 1%;
+    width: 100%;
+    display: inline-flex;
+}
+
+.footer_restantes p {
+    color: #1C7F89;
+    width: 100%;
+    display: inline;
+    position: relative;
+    font-family: "Letter Gothic STD", sans-serif;
+}
+
+#icones_links a img {
+    float: right;
+    padding-left: 1%;
+}
+
+
+/* BARRA DE NAVEGAÇÃO */
+
+.navbar-inverse {
+    border: 2px solid #1C7F89;
+    background-color: transparent;
+    border-radius: 0px;
+    font-family: "Letter Gothic STD", sans-serif;
+    font-weight: 300;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: dimgray;
+}
+
+.navbar-inverse .navbar-nav>.active>a,
+.navbar-inverse .navbar-nav>.active>a:focus,
+.navbar-inverse .navbar-nav>.active>a:hover {
+    text-decoration: underline;
+    color: #1C7F89;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar {
+    background-color: #1C7F89;
+}
+
+.navbar-inverse .navbar-collapse,
+.navbar-inverse .navbar-form {
+    border-color: #1C7F89;
+}
+
+.navbar-inverse .navbar-collapse,
+.navbar-inverse .navbar-form {
+    border-color: #1C7F89;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: #1C7F89;
+}
+
+.navbar-inverse .navbar-collapse {
+    border-color: #1C7F89;
+}
+
+.navbar-inverse .navbar-toggle:focus,
+.navbar-inverse .navbar-toggle:hover {
+    background-color: #fff;
+    color: #0000ff;
+}
+
+.navbar-toggle {
+    position: relative;
+    float: left;
+    padding: 10px;
+    margin-top: 8px;
+    margin-left: 15px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.menu_design_about .navbar-inverse .navbar-nav>li>a {
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.navbar-inverse .navbar-collapse,
+.navbar-inverse .navbar-form {
+    border-color: #fff;
+}
+
+
+/* --------------------- */
+
+
+/* HOMEPAGE */
+
+.mainmenu_index {
+    text-align: center;
+    width: 100%;
+    position: relative;
+}
+
+.main-title h1 {
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    margin: 0;
+    margin-top: 25%;
+    padding: 0;
+    padding-bottom: 2%;
+    font-family: "Letter Gothic STD", sans-serif;
+    font-weight: 700;
+    font-size: 2.5em;
+    color: #fff;
+}
+
+.main-title h3 {
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    margin: 0;
+    margin-top: 2%;
+    margin-bottom: 10%;
+    padding: 0;
+    font-family: "Letter Gothic STD", sans-serif;
+    font-weight: 300;
+    font-size: 0.9em;
+    color: #fff;
+}
+
+.main-title a {
+    text-decoration: none;
+}
+
+.footer_homepage {
+    margin-top: 7%;
+    width: 100%;
+    display: inline-flex;
+}
+
+.footer_homepage p {
+    color: #1C7F89;
+    width: 100%;
+    display: inline;
+    font-family: "Letter Gothic STD", sans-serif;
+}
+
+#icones_links {
+    width: 100%;
+}
+
+.mainmenu_index .logo {
+    width: 75%;
+    margin: auto;
+}
+
+.mainmenu_about .logo {
+    width: 25%;
+    align-content: center;
+    text-align: center;
+}
+
+.mainmenu_index_nav {
+    margin: auto;
+    width: 100%;
+    padding-top: 8em;
+}
+
+.mainmenu_index_nav .main-title {
+    width: 75%;
+    margin: auto;
+}
+
+.mainmenu_index_nav a {
+    text-decoration: none;
+    color: dimgray;
+    font-size: 150%;
+    display: inline-block;
+    font-family: "Letter Gothic STD", sans-serif;
+    margin-top: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.mainmenu_index_nav a:hover {
+    font-weight: bold;
+    color: #fff;
+}
+
+
+/* DESIGN */
+
+.bio_des {
+    font-size: 180%;
+}
+
+.works {}
+
+
+/* --------------------- */
+
+
+/* ABOUT*/
+
+#bio_img img {
+    margin-top: 4%;
+    width: 65%;
+    height: 65%;
+}
+
+
+/* --------------------- */
+
+
+/* BIOGRAPHY */
+
+.bio_text {
+    color: dimgray;
+    text-align: left;
+}
+
+.bio_text p {
+    padding-top: 5%;
+    text-align: left;
+}
+
+
+/* --------------------- */
+
+
+/* EDUCATION */
+
+.edu_text {
+    color: dimgray;
+    text-align: left;
+}
+
+.edu_text h3 {}
+
+.edu_text p {
+    padding-top: 5%;
+    text-align: left;
+}
+
+
+/* --------------------- */
+
+
+/* SKILLS */
+
+.skills {
+    color: dimgray;
+    text-align: left;
+}
+
+.skills_box {
+    display: inline-block;
+    padding-top: 5%;
+    padding-right: 2%;
+    margin-right: 8%;
+    margin-bottom: 2%;
+}
+
+
+/* --------------------- */
+
+
+/* CONTACTS */
+
+.contact {
+    color: dimgray;
+    text-align: left;
+    position: relative;
+    display: inline-block;
+    margin: auto;
+    float: right;
+    width: 48%;
+}
+
+.map {
+    border: none;
+    overflow: hidden;
+    width: 34em;
+    height: 30.7em;
+    margin: auto;
+}
+
+
+/* formulario */
+
+form {
+    margin-top: 5%;
+}
+
+form input {
+    width: 90%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border: 1px solid #17818A;
+    background-color: transparent;
+    color: dimgray;
+    font-family: "Letter Gothic STD", sans-serif;
+    font-weight: 400;
+}
+
+#mensagem {
+    width: 90%;
+    min-height: 13em;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    color: dimgray;
+    border: 1px solid #17818A;
+    background-color: transparent;
+}
+
+#button_submit {
+    background-color: transparent;
+    width: 15%;
+    color: dimgray;
+    text-align: center;
+    border: 1px solid #17818A;
+    float: right;
+    margin-right: 84.5%;
+    padding: 0.4%;
+}
+
+#button_submit:hover {
+    background-color: #fff;
+    width: 15%;
+    color: #0000ff;
+    text-align: center;
+    border: 1px solid #fff;
+    float: right;
+    margin-right: 84.5%;
+    padding: 0.4%;
+}
+
+
+/* --------------------- */
+
+
+/** Carousel **/
+
+.jcarousel-wrapper {
+    margin: 10% auto;
+    position: relative;
+    width: 100%;
+    margin-bottom: 11%;
+    box-sizing: border-box;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.jcarousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    box-shadow: 0 0 2px #999;
+}
+
+.jcarousel-pagination {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    margin: 10px 0 0 0;
+}
+
+.jcarousel-control-prev {
+    left: 10px;
+}
+
+.jcarousel-control-next {
+    right: 10px;
+}
+
+.jcarousel ul {
+    width: 20000em;
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.jcarousel li {
+    width: 200px;
+    float: left;
+    border: 1px solid rgb(214, 214, 213);
+    ;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.jcarousel img {
+    display: block;
+    max-width: 100%;
+    height: auto !important;
+}
+
+
+/** Carousel Controls **/
+
+.jcarousel-control-prev,
+.jcarousel-control-next {
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    background-color: transparent;
+    color: #1C7F89;
+    text-decoration: none;
+    font: 45px/30px "Roboto", sans-serif;
+    font-weight: 400;
+    border: 2px solid #1C7F89;
+}
+
+.jcarousel-control-prev:hover {
+    background-color: #1C7F89;
+    text-decoration: none;
+    color: rgb(214, 214, 213);
+}
+
+.jcarousel-control-next:hover {
+    background-color: #1C7F89;
+    text-decoration: none;
+    color: rgb(214, 214, 213);
+}
+
+.jcarousel-control-prev:focus {
+    text-decoration: none;
+}
+
+.jcarousel-control-next:focus {
+    text-decoration: none;
+}
+
+.jcarousel img {
+    border: 4px solid #105F63;
+}
+
+
+/** Carousel Pagination **/
+
+.jcarousel-pagination a {
+    text-decoration: none;
+    display: inline-block;
+    background-color: transparent;
+    color: #1C7F89;
+    border: 1.5px solid #1C7F89;
+    text-indent: -9999px;
+    margin-right: 7px;
+    transform: rotate(45deg);
+    height: 1.2em;
+    width: 1.2em;
+    font-size: 0.7em;
+}
+
+.jcarousel-pagination a.active {
+    background: #1C7F89;
+    color: #1C7F89;
+}
+
+
+/* texto aprecer em cima da imagem*/
+
+.cenas {
+    position: relative;
+}
+
+.cenocas {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+}
+
+.cenocas:hover .cenocas_text {
+    display: block;
+}
+
+.cenocas_text {
+    width: 80%;
+    height: 80%;
+    background-color: rgb(214, 214, 213);
+    ;
+    margin: auto auto;
+    display: none;
+    color: #1C7F89;
+    font-family: "Letter Gothic STD", sans-serif;
+}
+
+.cenocas_text p {
+    padding-left: 6%;
+    font-size: 1em;
+}
+
+.cenocas_text h3 {
+    padding-top: 15%;
+    font-weight: bold;
+    padding-left: 6%;
+    font-size: 1.4em;
+}
+
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+}

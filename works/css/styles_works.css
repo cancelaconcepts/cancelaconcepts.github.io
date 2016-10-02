@@ -1,0 +1,75 @@
+@font-face {
+    font-family: 'Letter Gothic Std';
+    font-style: normal;
+    font-weight: normal;
+    src: url('LetterGothicStd.woff') format('woff');
+}
+
+body {
+    /*Manter o tamanho minímo com os pixeis indicados*/
+    /*min-width: 900px;*/
+    width: auto !important;
+    background-color: rgb(214, 214, 213);
+    padding: 0px;
+    margin: 0px;
+}
+
+
+/*----- lightbox -*/
+
+* {
+    box-sizing: border-box;
+}
+
+#gallery {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgb(214, 214, 213);
+}
+
+#gallery h3 {
+    flex: 1 0 100%;
+    background-color: transparent;
+    color: #105F63;
+    font-family: 'Letter Gothic STD', sans-serif;
+    font-weight: 800;
+    font-size: 1.7em;
+    margin-top: 12%;
+}
+
+#gallery p {
+    flex: 1 0 100%;
+    background-color: transparent;
+    color: #1C7F89;
+    font-family: 'Letter Gothic STD', sans-serif;
+    font-size: 1em;
+    font-weight: 100;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+#gallery > div {
+    flex: 1 1 240px;
+}
+
+#gallery img {
+    max-width: 104px;
+    transition: all 1s ease 0s;
+    margin: 1px;
+    border: 2px solid #1C7F89;
+    margin-top: 55px;
+    margin-bottom: -47px;
+}
+
+.images_works iframe {
+    margin-top: 59px;
+}
+
+.videos {
+    width: 31em;
+    height: 17em;
+    border: none;
+    overflow: hidden;
+}

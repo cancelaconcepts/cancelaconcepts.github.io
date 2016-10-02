@@ -1,0 +1,131 @@
+ #fbx.fbx .fbOverlay_custom {
+     background-color: #1C7F89
+ }
+ 
+ #fbx.fbx .fbBackground_custom,
+ #fbx.fbx .fbEdge_custom,
+ #fbx.fbx .fbInnerEdge_custom {
+     background-color: #1C7F89
+ }
+ 
+ #fbx.fbx .fbEdge_custom,
+ #fbx.fbx .fbInnerEdge_custom {
+     border-color: #1C7F89
+ }
+ 
+ #fbx.fbx .fbContentWrapper_custom {
+     border-color: #1C7F89
+ }
+ 
+ #fbx.fbx .fbItemNumber_custom,
+ #fbx.fbx .fbIndexLinks_custom,
+ #fbx.fbx .fbNewWindowLink_custom {
+     color: #1C7F89;
+     border-color: #000
+ }
+ 
+ #fbx.fbx .fbCaption_custom,
+ #fbx.fbx .fbCaption2_custom,
+ #fbx.fbx .fbInfoLink_custom,
+ #fbx.fbx .fbPrintLink_custom {
+     color: #000
+ }
+ 
+ #fbx.fbx .fbLoader_custom {
+     background-image: url(graphics/custom/loader_small.gif)
+ }
+ 
+ #fbx.fbx .fbResizer_custom {
+     background-image: url(graphics/custom/resizer.gif)
+ }
+ 
+ #fbx.fbx .fbDragger_custom {
+     background-image: url(graphics/custom/dragger.gif)
+ }
+ 
+ #fbx.fbx .fbOverlayPrev_custom {
+     background-image: url(graphics/custom/overlayPrev.gif)
+ }
+ 
+ #fbx.fbx .fbOverlayNext_custom {
+     background-image: url(graphics/custom/overlayNext.gif)
+ }
+ 
+ #fbx.fbx .fbPrev_custom {
+     background-image: url(graphics/custom/prev_on.png)
+ }
+ 
+ #fbx.fbx .fbNext_custom {
+     background-image: url(graphics/custom/next_on.png)
+ }
+ 
+ #fbx.fbx .fbPlay_custom {
+     background-image: url(graphics/custom/play.png)
+ }
+ 
+ #fbx.fbx .fbPause_custom {
+     background-image: url(graphics/custom/pause.png)
+ }
+ 
+ #fbx.fbx .fbClose_custom {
+     background-image: url(graphics/custom/close.png)
+ }
+ 
+ #fbx.fbx .fbOuterClose_custom {
+     background-image: url(graphics/custom/outerClose.png)
+ }
+ 
+ #fbx.fbx .fbNewWindowLink_custom a {
+     background-image: url(graphics/custom/newWindow_off.png)
+ }
+ 
+ #fbx.fbx .fbNewWindowLink_custom a:hover,
+ #fbx.fbx .fbNewWindowLink_custom a:focus {
+     background-image: url(graphics/custom/newWindow_on.png)
+ }
+ 
+ #fbx .fbControls_custom {
+     height: 14px
+ }
+ 
+ #fbx .fbNavControls_custom {
+     width: 88px;
+     height: 14px
+ }
+ 
+ #fbx .fbPrev_custom {
+     width: 44px;
+     height: 14px
+ }
+ 
+ #fbx .fbNext_custom {
+     width: 44px;
+     height: 14px
+ }
+ 
+ #fbx .fbPlayPause_custom,
+ #fbx .fbPlay_custom,
+ #fbx .fbPause_custom {
+     width: 46px;
+     height: 14px
+ }
+ 
+ #fbx .fbClose_custom {
+     width: 46px;
+     height: 14px
+ }
+ 
+ #fbx .fbOuterClose_custom {
+     width: 27px;
+     height: 27px
+ }
+ 
+ #fbx .fbResizer_custom {
+     width: 25px;
+     height: 25px
+ }
+ 
+ #fbx .fbDragger_custom {
+     width: 12px;
+     height: 12px
+ }
