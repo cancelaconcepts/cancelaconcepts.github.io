@@ -11,7 +11,7 @@ body {
     /*Manter o tamanho minímo com os pixeis indicados*/
     /*min-width: 900px;*/
     width: auto !important;
-    background-color: rgb(214, 214, 213);
+    background-color: rgb(218, 217, 218);
     padding: 0px;
     margin: 0px;
     outline: none;
@@ -28,18 +28,33 @@ a {
     body {
         font-size: 100%;
     }
+     #bio_img img {
+    margin-top: 4%;
+    width: 35%;
+}
     .footer_homepage #icones_links a img {
         display: inline-flex;
         float: right;
         padding-top: 2%;
         width: 10%;
     }
+    .languages_pt a {
+    text-decoration: none;
+    color: dimgray;
+    font-size: 80%;
+    }
+    .languages_pt #pt {
+    color: #105F63;
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 80%;
+}
     .footer_homepage p {
         color: #1C7F89;
         width: 100%;
         font-family: "Letter Gothic STD", sans-serif;
         font-weight: bold;
-        font-size: 0.7em;
+        font-size: 50%;
     }
     .footer_restantes #icones_links a img {
         display: inline-flex;
@@ -98,13 +113,21 @@ a {
     .footer_homepage p {
         color: #1C7F89;
         font-family: "Letter Gothic STD", sans-serif;
-        font-weight: 100;
+        font-size: 82%;
+        float: left;
     }
     .footer_homepage #icones_links a img {
         display: inline;
-        float: none;
-        padding-top: 2%;
+    float: none;
+    width: 6%;
+    float: right;
+    position: relative;
+    margin: auto;
     }
+     #bio_img img {
+    margin-top: 4%;
+    width: 35%;
+}
 }
 
 
@@ -114,6 +137,12 @@ a {
     body {
         font-size: 120%;
     }
+    
+     #bio_img img {
+    margin-top: 4%;
+    width: 35%;
+}
+    
     .footer_restantes {
         margin-top: 20%;
         text-align: center;
@@ -144,11 +173,13 @@ a {
         color: #fff;
         font-family: "Letter Gothic STD", sans-serif;
         font-weight: 100;
+        font-size: 90%;
     }
     .footer_homepage #icones_links a img {
         display: inline;
-        float: none;
+        float: right;
         padding-top: 2%;
+        width: 10%;
     }
     .container-fluid {
         text-align: center;
@@ -169,6 +200,10 @@ a {
     .container-fluid {
         text-align: center;
     }
+#bio_img img {
+    margin-top: 4%;
+    width: 55%;
+}
 }
 
 
@@ -197,6 +232,10 @@ a {
         color: dimgray;
         font-size: 150%;
     }
+    #bio_img img {
+    margin-top: 4%;
+    width: 65%;
+}
 }
 
 
@@ -223,8 +262,7 @@ a {
 
 .languages_en {
     float: right;
-    position: inherit;
-    margin-top: 5%;
+    margin-top: 4%;
     text-decoration: none;
     color: dimgray;
     font-size: 150%;
@@ -234,7 +272,7 @@ a {
 
 .languages_pt {
     float: right;
-    margin-top: 5%;
+    margin-top: 4%;
     text-decoration: none;
     color: dimgray;
     font-size: 150%;
@@ -266,13 +304,13 @@ a {
 .languages_en a {
     text-decoration: none;
     color: dimgray;
-    font-size: 100%;
+    font-size: 80%
 }
 
 .languages_pt a {
     text-decoration: none;
     color: dimgray;
-    font-size: 100%;
+    font-size: 80%;
 }
 
 .languages_en a:hover {
@@ -293,7 +331,7 @@ a {
     color: #105F63;
     font-weight: bold;
     text-decoration: underline;
-    font-size: 100%;
+    font-size: 80%;
 }
 
 
@@ -312,7 +350,7 @@ a {
 }
 
 .mainmenu_design .logo {
-    width: 25%;
+    width: 20%;
     margin: auto;
 }
 
@@ -650,7 +688,7 @@ a {
 }
 
 .mainmenu_about .logo {
-    width: 25%;
+    width: 20%;
     align-content: center;
     text-align: center;
 }
@@ -658,7 +696,7 @@ a {
 .mainmenu_index_nav {
     margin: auto;
     width: 100%;
-    padding-top: 8em;
+    padding-top: 5em;
 }
 
 .mainmenu_index_nav .main-title {
@@ -697,11 +735,7 @@ a {
 
 /* ABOUT*/
 
-#bio_img img {
-    margin-top: 4%;
-    width: 65%;
-    height: 65%;
-}
+
 
 
 /* --------------------- */
@@ -749,11 +783,15 @@ a {
 }
 
 .skills_box {
-    display: inline-block;
-    padding-top: 5%;
-    padding-right: 2%;
-    margin-right: 8%;
-    margin-bottom: 2%;
+    margin-top:-3%;
+}
+
+.skills_box h4{
+font-style: normal
+}
+
+.skills_box p{
+    
 }
 
 
@@ -980,7 +1018,7 @@ form input {
 
 .cenocas_text {
     width: 80%;
-    height: 80%;
+    height: 87%;
     background-color: rgb(214, 214, 213);
     ;
     margin: auto auto;
@@ -1009,4 +1047,9 @@ form input {
 
 .navbar .navbar-collapse {
     text-align: center;
+}
+
+.worklink{
+    font-weight: 1000;
+    text-decoration: none;
 }

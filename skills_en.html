@@ -17,7 +17,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
     <script type="text/javascript" src="js/jcarousel.responsive.js"></script>
-
+    
+    <!-- Charts -->
+    <script src="js/d3.min.js"></script>
+<script src="js/d3pie.min.js"></script>
+ 
     <!-- fontes e CSS -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/textanimation.css">
@@ -34,7 +38,6 @@
 
 <body>
     <div class="container">
-
         <!-- Menu Logótipo -->
         <header class="mainmenu_about">
 
@@ -86,34 +89,11 @@
                     </div>
                     <div class="col-md-6">
                         <div class="skills">
-                            <h3>Skills</h3>
+                            <h3>Digital Competences/Technologies</h3>
 
                             <!-- Cada skill é dividida em caixas -->
                             <article class="skills_box">
-                                <h4>3D Modelation</h4>
-                                <p>Cinema4D - 4/5
-                                    <br>Rhinoceros - 4/5
-                                    <br>3Ds Max - 2/5</p>
-                            </article>
-                            <article class="skills_box">
-                                <h4>Photoshop</h4>
-                                <p>3/5</p>
-                            </article>
-                            <article class="skills_box">
-                                <h4>Illustrator</h4>
-                                <p>4/5</p>
-                            </article>
-                            <article class="skills_box">
-                                <h4>Indesign</h4>
-                                <p>3/5</p>
-                            </article>
-                            <article class="skills_box">
-                                <h4>After Effects</h4>
-                                <p>4/5</p>
-                            </article>
-                            <article class="skills_box">
-                                <h4>Word</h4>
-                                <p>3/5</p>
+                       <div id="pieChart"></div>
                             </article>
                         </div>
                     </div>
@@ -123,7 +103,7 @@
 
         <!-- Autores e acesso às redes Sociais-->
         <footer class="col-md-12 footer_restantes">
-            <p>Francisco Cancela | All rights reserved 2015 &#169;</p>
+            <p>Francisco Cancela | All rights reserved 2016 &#169;</p>
             <div id="icones_links">
                 <a href="https://vimeo.com/cancelaconcepts" target="_blank">
                     <img src="img/vimeo.svg" alt="Vimeo">
@@ -140,6 +120,145 @@
             </div>
         </footer>
     </div>
+    
+    <!-- Opções do PieChart -->
+<script>
+var pie = new d3pie("pieChart", {
+	"header": {
+		"title": {
+			"color": "#2a1212",
+			"fontSize": 24,
+			"font": "open sans"
+		},
+		"subtitle": {
+			"color": "#c01313",
+			"fontSize": 12,
+			"font": "open sans"
+		},
+		"titleSubtitlePadding": 9
+	},
+	"footer": {
+		"color": "#999999",
+		"fontSize": 10,
+		"font": "open sans",
+		"location": "bottom-left"
+	},
+	"size": {
+		"canvasWidth": 470,
+        "canvasHeight": 360,
+		"pieInnerRadius": "86%",
+		"pieOuterRadius": "75%"
+	},
+	"data": {
+		"sortOrder": "label-asc ",
+		"content": [
+			{
+				"label": "After Effects",
+				"value": 6,
+				"color": "#16a5a5"
+			},
+			{
+				"label": "Blender",
+				"value": 6,
+				"color": "#16a5a5"
+			},
+			{
+				"label": "Cinema 4D",
+				"value": 7,
+				"color": "#126666"
+			},
+			{
+				"label": "Corel Draw",
+				"value": 5,
+				"color": "#38b2b2"
+			},
+			{
+				"label": "Illustrator",
+				"value": 8,
+				"color": "#08393a"
+			},
+			{
+				"label": "Indesign",
+				"value": 7,
+				"color": "#126666"
+			},
+			{
+				"label": "MotionBuilder",
+				"value": 6,
+				"color": "#16a5a5"
+			},
+			{
+				"label": "Photoshop",
+				"value": 8,
+				"color": "#08393a"
+			},
+			{
+				"label": "Rhinoceros",
+				"value": 6,
+				"color": "#16a5a5"
+			},
+			{
+				"label": "3d Studio Max",
+				"value": 8,
+				"color": "#08393a"
+			},
+			{
+				"label": "HTML5+CSS3",
+				"value": 6,
+				"color": "#16a5a5"
+			},
+			{
+				"label": "Java (Processing)",
+				"value": 4,
+				"color": "#2cc4c4"
+			}
+		]
+	},
+	"labels": {
+		"outer": {
+			"pieDistance": 15
+		},
+		"inner": {
+			"format": "value",
+			"hideWhenLessThanPercentage": 3
+		},
+		"mainLabel": {
+			"color": "#000000",
+			"font": "Letter Gothic STD",
+			"fontSize": 13
+		},
+		"percentage": {
+			"color": "#ffffff",
+			"font": "Letter Gothic STD",
+			"decimalPlaces": 0
+		},
+		"value": {
+			"color": "#ffffff",
+			"font": "Letter Gothic STD",
+			"fontSize": 11
+		},
+		"lines": {
+			"enabled": true
+		},
+		"truncation": {
+			"enabled": true
+		}
+	},
+	"effects": {
+		"pullOutSegmentOnClick": {
+			"effect": "linear",
+			"speed": 400,
+			"size": 4
+		}
+	},
+	"misc": {
+		"gradient": {
+			"enabled": true,
+			"percentage": 100
+		}
+	}
+});
+</script>
 </body>
 
 </html>
