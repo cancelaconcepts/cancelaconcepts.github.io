@@ -45,7 +45,7 @@
             </nav>
             <nav class="mainmenu_index_nav">
                 <a href="index_en.html" title="Index" class="main-title">
-                    <video id="video1" width="78%" autoplay loop>
+                    <video id="vid" width="78%" autoplay loop>
                         <source src="video/cancelaconcepts.mp4" type="video/mp4">
                         Your browser does not support HTML5 video. </video>
                 </a>
@@ -73,6 +73,10 @@
             </div>
         </footer>
     </div>
+    <script>var $video = $('#vid');
+$video.on('canplaythrough', function() {
+   this.play();
+});</script>
 </body>
 
 </html>
